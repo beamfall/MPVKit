@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check version to release
-        uses: jannekem/run-python-script-action@v1
+        uses: jannekem/run-python-script-action@9d8e2e0878d575fb6073277f38ce3f10ebf4f059 # v1
         with:
           script: |
             import re

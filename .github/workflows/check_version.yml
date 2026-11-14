@@ -47,7 +47,7 @@ jobs:
           rm -rf ./mpv
 
       - name: update to new version
-        uses: jannekem/run-python-script-action@v1
+        uses: jannekem/run-python-script-action@9d8e2e0878d575fb6073277f38ce3f10ebf4f059 # v1
         with:
           script: |
             import re
@@ -99,7 +99,7 @@ jobs:
 
       - name: Create Pull Request
         if: env.FOUND_NEW_MPV_VERSION && !env.FOUND_NEW_FFMPEG_VERSION
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           add-paths: |
             ./Sources/BuildScripts/XCFrameworkBuild/main.swift
@@ -112,7 +112,7 @@ jobs:
 
       - name: Create Pull Request
         if: env.FOUND_NEW_FFMPEG_VERSION && !env.FOUND_NEW_MPV_VERSION
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           add-paths: |
             ./Sources/BuildScripts/XCFrameworkBuild/main.swift
@@ -125,7 +125,7 @@ jobs:
 
       - name: Create Pull Request
         if: env.FOUND_NEW_FFMPEG_VERSION && env.FOUND_NEW_MPV_VERSION
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           add-paths: |
             ./Sources/BuildScripts/XCFrameworkBuild/main.swift
@@ -177,7 +177,7 @@ jobs:
           rm -rf ../latest_code
 
       - name: update to new version
-        uses: jannekem/run-python-script-action@v1
+        uses: jannekem/run-python-script-action@9d8e2e0878d575fb6073277f38ce3f10ebf4f059 # v1
         with:
           script: |
             import re
@@ -221,7 +221,7 @@ jobs:
 
       - name: Create Pull Request
         if: env.FOUND_NEW_VERSION && steps.check_pr_matrix.outputs.exists == 'false'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           add-paths: |
             ./Sources/BuildScripts/XCFrameworkBuild/main.swift
@@ -350,7 +350,7 @@ jobs:
 
       - name: Create Pull Request
         if: env.HAS_CHANGES == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           add-paths: |
             ./Sources/BuildScripts/XCFrameworkBuild/base.swift
